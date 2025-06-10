@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { useState } from 'react';
 
 const GalleryGrid = styled.div`
@@ -54,8 +54,55 @@ const GalleryItem = styled(motion.div)`
   }
 `;
 
+const Modal = styled(motion.div)`
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 2rem;
+`;
+
+const ModalImage = styled(motion.img)`
+  max-width: 90%;
+  max-height: 90vh;
+  object-fit: contain;
+  border-radius: 8px;
+`;
+
+const ModalContent = styled(motion.div)`
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+`;
+
+const CloseButton = styled.button`
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  
+  &:hover {
+    background: rgba(255, 255, 255, 0.3);
+  }
+`;
+
 const Gallery = () => {
   const [hoveredId, setHoveredId] = useState<number | null>(null);
+  const [selectedImage, setSelectedImage] = useState<{ image: string; title: string } | null>(null);
   const galleryItems = [
     {
       id: 1,
@@ -115,24 +162,56 @@ const Gallery = () => {
   ];
 
   return (
-    <GalleryGrid>
-      {galleryItems.map((item) => (
-        <GalleryItem
-          key={item.id}
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          onMouseEnter={() => setHoveredId(item.id)}
-          onMouseLeave={() => setHoveredId(null)}
-        >
-          <img src={item.image} alt={item.title} />
-          <ItemTitle>{item.title}</ItemTitle>
-          <ItemDescription style={{ opacity: hoveredId === item.id ? 1 : 0 }}>
-            {item.description}
-          </ItemDescription>
-        </GalleryItem>
-      ))}
-    </GalleryGrid>
+    <>
+      <GalleryGrid>
+        {galleryItems.map((item) => (
+          <GalleryItem
+            key={item.id}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            onMouseEnter={() => setHoveredId(item.id)}
+            onMouseLeave={() => setHoveredId(null)}
+            onClick={() => setSelectedImage({ image: item.image, title: item.title })}
+          >
+            <img src={item.image} alt={item.title} />
+            <ItemTitle>{item.title}</ItemTitle>
+            <ItemDescription style={{ opacity: hoveredId === item.id ? 1 : 0 }}>
+              {item.description}
+            </ItemDescription>
+          </GalleryItem>
+        ))}
+      </GalleryGrid>
+
+      <AnimatePresence>
+        {selectedImage && (
+          <Modal
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setSelectedImage(null)}
+          >
+            <ModalContent
+              initial={{ scale: 0.8 }}
+              animate={{ scale: 1 }}
+              exit={{ scale: 0.8 }}
+              onClick={(e) => e.stopPropagation()}
+            >
+              <CloseButton onClick={() => setSelectedImage(null)}>×</CloseButton>
+              <ModalImage
+                src={selectedImage.image}
+                alt={selectedImage.title}
+                initial={{ y: 20 }}
+                animate={{ y: 0 }}
+              />
+              <ItemTitle style={{ position: 'relative', background: 'none' }}>
+                {selectedImage.title}
+              </ItemTitle>
+            </ModalContent>
+          </Modal>
+        )}
+      </AnimatePresence>
+    </>
   );
 };
 

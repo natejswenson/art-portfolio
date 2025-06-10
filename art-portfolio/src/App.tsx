@@ -66,7 +66,30 @@ const Title = styled.h1`
   font-family: ${theme.fonts.heading};
   font-size: 4rem;
   margin-bottom: 1rem;
-  color: ${theme.colors.primary};
+  background: linear-gradient(
+    to right,
+    #ff0000,
+    #ff7f00,
+    #ffff00,
+    #00ff00,
+    #0000ff,
+    #4b0082,
+    #8b00ff
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: rainbow 8s linear infinite;
+  background-size: 200% auto;
+
+  @keyframes rainbow {
+    0% {
+      background-position: 0% center;
+    }
+    100% {
+      background-position: 200% center;
+    }
+  }
 `;
 
 const Subtitle = styled.p`
