@@ -44,25 +44,25 @@ const Gallery = () => {
     {
       id: 1,
       title: "The World of Color",
-      image: "/IMG_3806.jpeg",
+      image: "/art-portfolio/IMG_3806.jpeg",
       description: "A fun thing to do with paint"
     },
     {
       id: 2,
       title: "Flower Land",
-      image: "/IMG_3805.jpeg",
+      image: "/art-portfolio/IMG_3805.jpeg",
       description: "Made at my sister's birthday party with paint"
     },
     {
       id: 3,
       title: "The Random Magnets",
-      image: "/IMG_3807.jpeg",
+      image: "/art-portfolio/IMG_3807.jpeg",
       description: "Fun to add magnets to the collection with markers and pearl beads"
     },
     {
       id: 4,
       title: "The Landscape",
-      image: "/IMG_3808.jpeg",
+      image: "/art-portfolio/IMG_3808.jpeg",
       description: "Something fun to do when I was bored with colored pencils"
     }
   ];
