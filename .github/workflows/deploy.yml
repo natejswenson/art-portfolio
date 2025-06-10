@@ -21,13 +21,15 @@ jobs:
           cache: 'npm'
 
       - name: Install Dependencies
+        working-directory: art-portfolio
         run: npm ci
 
       - name: Build
+        working-directory: art-portfolio
         run: npm run build
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: dist
+          folder: art-portfolio/dist
           branch: gh-pages 
