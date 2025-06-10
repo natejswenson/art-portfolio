@@ -1,24 +1,9 @@
 import { ThemeProvider } from '@emotion/react';
 import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
-import { useState } from 'react';
 import Gallery from './components/Gallery';
 import About from './components/About';
-import Contact from './components/Contact';
-
-const theme = {
-  colors: {
-    primary: '#2D3047',
-    secondary: '#93B7BE',
-    accent: '#E0A458',
-    background: '#FFFFFF',
-    text: '#2D3047',
-  },
-  fonts: {
-    body: "'Inter', sans-serif",
-    heading: "'Playfair Display', serif",
-  },
-};
+import { theme } from './theme';
 
 const AppContainer = styled.div`
   min-height: 100vh;

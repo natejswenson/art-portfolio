@@ -1,10 +1,10 @@
 import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
 
-const AboutContainer = styled.div`
+const AboutContainer = styled(motion.div)`
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 4rem;
+  gap: 2rem;
   align-items: center;
 
   @media (max-width: 768px) {
@@ -21,35 +21,36 @@ const AboutImage = styled(motion.img)`
 `;
 
 const AboutContent = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
+  font-family: ${props => props.theme.fonts.body};
 `;
 
 const AboutTitle = styled.h2`
-  font-family: ${props => props.theme.fonts.heading};
-  font-size: 2.5rem;
   color: ${props => props.theme.colors.primary};
   margin-bottom: 1rem;
 `;
 
 const AboutText = styled.p`
-  font-size: 1.1rem;
-  line-height: 1.8;
   color: ${props => props.theme.colors.text};
+  line-height: 1.6;
+  margin-bottom: 1rem;
 `;
 
 const About = () => {
   return (
-    <AboutContainer>
+    <AboutContainer
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+    >
       <AboutContent>
         <AboutTitle>About the Artist</AboutTitle>
         <AboutText>
-          Hi, I'm Bailey Swenson. I like to draw and paint. I love my dogs Luna and Rufus, and I have one sister named Kenzie.
+          Welcome to my art portfolio! I am a passionate artist dedicated to creating
+          unique and meaningful pieces that capture the beauty of the world around us.
         </AboutText>
         <AboutText>
-          My work is driven by my passion for art and the joy I find in creating. Each piece I create is an invitation to explore
-          the boundaries between reality and imagination, encouraging viewers to find their own meaning in the work.
+          My work explores various mediums and techniques, always pushing the boundaries
+          of traditional art forms to create something truly special.
         </AboutText>
       </AboutContent>
     </AboutContainer>
