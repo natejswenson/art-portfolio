@@ -78,7 +78,7 @@ Error generating stack: `+n.message+`
   color: white;
   margin: 0;
   font-family: ${a=>a.theme.fonts.heading};
-`,Jx=()=>{const a=[{id:1,title:"The World of Color",image:"/IMG_3806.jpeg",description:"A fun thing to do with paint"},{id:2,title:"Flower Land",image:"/IMG_3805.jpeg",description:"Made at my sister's birthday party with paint"},{id:3,title:"The Random Magnets",image:"/IMG_3807.jpeg",description:"Fun to add magnets to the collection with markers and pearl beads"},{id:4,title:"The Landscape",image:"/IMG_3808.jpeg",description:"Something fun to do when I was bored with colored pencils"}];return dt.jsx(Qx,{children:a.map(i=>dt.jsxs(kx,{initial:{opacity:0,y:20},animate:{opacity:1,y:0},transition:{duration:.5},children:[dt.jsx("img",{src:i.image,alt:i.title}),dt.jsx(Px,{children:i.title})]},i.id))})},Fx=Jt(vf.div)`
+`,Jx=()=>{const a=[{id:1,title:"The World of Color",image:"/art-portfolio/IMG_3806.jpeg",description:"A fun thing to do with paint"},{id:2,title:"Flower Land",image:"/art-portfolio/IMG_3805.jpeg",description:"Made at my sister's birthday party with paint"},{id:3,title:"The Random Magnets",image:"/art-portfolio/IMG_3807.jpeg",description:"Fun to add magnets to the collection with markers and pearl beads"},{id:4,title:"The Landscape",image:"/art-portfolio/IMG_3808.jpeg",description:"Something fun to do when I was bored with colored pencils"}];return dt.jsx(Qx,{children:a.map(i=>dt.jsxs(kx,{initial:{opacity:0,y:20},animate:{opacity:1,y:0},transition:{duration:.5},children:[dt.jsx("img",{src:i.image,alt:i.title}),dt.jsx(Px,{children:i.title})]},i.id))})},Fx=Jt(vf.div)`
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 2rem;
