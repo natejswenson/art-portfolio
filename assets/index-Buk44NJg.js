@@ -108,7 +108,7 @@ Error generating stack: `+n.message+`
   color: ${a=>a.theme.colors.text};
   line-height: 1.6;
   margin-bottom: 1rem;
-`,tE=()=>ft.jsx($x,{initial:{opacity:0,y:20},animate:{opacity:1,y:0},transition:{duration:.5},children:ft.jsxs(Wx,{children:[ft.jsx(Ix,{children:"About the Artist"}),ft.jsx(Gy,{children:"Welcome to my art portfolio! I am a passionate artist dedicated to creating unique and meaningful pieces that capture the beauty of the world around us."}),ft.jsx(Gy,{children:"My work explores various mediums and techniques, always pushing the boundaries of traditional art forms to create something truly special."})]})}),Ze={colors:{primary:"#2D3047",secondary:"#93B7BE",accent:"#E0A458",background:"#FFFFFF",text:"#2D3047"},fonts:{body:"'Inter', sans-serif",heading:"'Playfair Display', serif"}},eE=Kt.div`
+`,tE=()=>ft.jsx($x,{initial:{opacity:0,y:20},animate:{opacity:1,y:0},transition:{duration:.5},children:ft.jsxs(Wx,{children:[ft.jsx(Ix,{children:"About the Artist"}),ft.jsx(Gy,{children:"Hi! I'm Bailey, a 4th grade artist who loves creating art! I keep all my art supplies in my room where I can let my creativity flow. I have a sister who's going into 7th grade, and I live with my mom Angie and dad Nate."}),ft.jsx(Gy,{children:"When I'm not making art, I love spending time with my two dogs - Rufus (my boy dog) and Luna (my girl dog). They're my best buddies and sometimes even inspire my artwork!"})]})}),Ze={colors:{primary:"#2D3047",secondary:"#93B7BE",accent:"#E0A458",background:"#FFFFFF",text:"#2D3047"},fonts:{body:"'Inter', sans-serif",heading:"'Playfair Display', serif"}},eE=Kt.div`
   min-height: 100vh;
   background-color: ${Ze.colors.background};
   color: ${Ze.colors.text};
