@@ -37,12 +37,10 @@ const About = () => {
       <AboutContent>
         <AboutTitle>About the Artist</AboutTitle>
         <AboutText>
-          Welcome to my art portfolio! I am a passionate artist dedicated to creating
-          unique and meaningful pieces that capture the beauty of the world around us.
+          Hi! I'm Bailey, a 4th grade artist who loves creating art! I keep all my art supplies in my room where I can let my creativity flow. I have a sister who's going into 7th grade, and I live with my mom Angie and dad Nate.
         </AboutText>
         <AboutText>
-          My work explores various mediums and techniques, always pushing the boundaries
-          of traditional art forms to create something truly special.
+          When I'm not making art, I love spending time with my two dogs - Rufus (my boy dog) and Luna (my girl dog). They're my best buddies and sometimes even inspire my artwork!
         </AboutText>
       </AboutContent>
     </AboutContainer>
