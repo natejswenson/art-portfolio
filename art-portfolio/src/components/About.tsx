@@ -12,14 +12,6 @@ const AboutContainer = styled(motion.div)`
   }
 `;
 
-const AboutImage = styled(motion.img)`
-  width: 100%;
-  height: 500px;
-  object-fit: cover;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-`;
-
 const AboutContent = styled.div`
   font-family: ${props => props.theme.fonts.body};
 `;
